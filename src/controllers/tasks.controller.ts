@@ -54,12 +54,10 @@ export const updateTask = async (req: Request, res: Response) => {
       where: { id },
       data: { title, description },
     });
-    res
-      .status(200)
-      .json({
-        message: `Task '${id}' Updated Successfully!`,
-        updated_task: updatedTask,
-      });
+    res.status(200).json({
+      message: `Task '${id}' Updated Successfully!`,
+      updated_task: updatedTask,
+    });
   } catch (e) {
     res.status(500).json({ message: "SomethingWent Wrong!" });
   }
@@ -72,12 +70,10 @@ export const deleteTask = async (req: Request, res: Response) => {
       where: { id },
       data: { isDeleted: true },
     });
-    res
-      .status(200)
-      .json({
-        message: `Task '${id}' Deleted Successfully!`,
-        deleted_task: deletedTask,
-      });
+    res.status(200).json({
+      message: `Task '${id}' Deleted Successfully!`,
+      deleted_task: deletedTask,
+    });
   } catch (e) {
     res.status(500).json({ message: "Something Went Wrong!" });
   }

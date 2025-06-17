@@ -6,9 +6,9 @@ import {
   updateTask,
   deleteTask,
 } from "../controllers/tasks.controller";
-import { validateNewTaskInput } from '../middlewares/validateNewTaskInput'
-import { validateTaskIdExistence } from '../middlewares/validateTaskIdExistence'
-import { validateIfTaskAlreadyDeleted } from '../middlewares/validateIfTaskAlreadyDeleted'
+import { validateNewTaskInput } from "../middlewares/validateNewTaskInput";
+import { validateTaskIdExistence } from "../middlewares/validateTaskIdExistence";
+import { validateIfTaskAlreadyDeleted } from "../middlewares/validateIfTaskAlreadyDeleted";
 
 const router = Router();
 
@@ -25,6 +25,11 @@ router.get("/:id", validateTaskIdExistence, getSpecificTask);
 router.patch("/:id", validateTaskIdExistence, updateTask);
 
 // DELETE /tasks/:id (Soft Delete a task)
-router.delete("/:id", validateTaskIdExistence, validateIfTaskAlreadyDeleted, deleteTask);
+router.delete(
+  "/:id",
+  validateTaskIdExistence,
+  validateIfTaskAlreadyDeleted,
+  deleteTask,
+);
 
 export default router;
