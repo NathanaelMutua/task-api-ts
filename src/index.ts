@@ -9,13 +9,16 @@ app.use(express.json());
 
 // main/home route
 app.get("/", (_req: Request, res: Response) => {
-  res.sendFile(path.join(__dirname, "build/index.html")); // this will be how I pass my static index.html page to the main route
+  res.send(`<h1>Task Api in TS</h1>`); // simplified
 });
+// app.get("/", (_req: Request, res: Response) => {
+//   res.sendFile(path.join(__dirname, "build/index.html")); // this will be how I pass my static index.html page to the main route
+// });
 
 app.use("/tasks", tasksRouter);
 
 // this middleware tells express that whenever a static asset is required, it can look inside /public for assets like CSS
-app.use(express.static(path.join(__dirname, 'build/public')));
+// app.use(express.static(path.join(__dirname, 'build/public')));
 
 // port implementation
 const port = process.env.PORT || 5500;
