@@ -13,7 +13,7 @@ app.get("/", (_req: Request, res: Response) => {
 app.use("/tasks", tasksRouter);
 
 // this middleware tells express that whenever a static asset is required, it can look inside /public for assets like CSS
-app.use(express.static("./public"));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // port implementation
 const port = process.env.PORT || 5500;
