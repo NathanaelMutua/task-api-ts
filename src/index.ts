@@ -1,6 +1,6 @@
 import express, { Express, Request, Response } from "express";
 import path from "path";
-import tasksRouter from './routes/tasks.routes'
+import tasksRouter from "./routes/tasks.routes";
 
 const app: Express = express();
 app.use(express.json());
