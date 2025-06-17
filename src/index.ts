@@ -1,7 +1,9 @@
 import express, { Express, Request, Response } from "express";
 import path from "path";
 import tasksRouter from "./routes/tasks.routes";
+import dotenv from "dotenv";
 
+dotenv.config({ path: ".env" }); //enable to read environment variables
 const app: Express = express();
 app.use(express.json());
 
