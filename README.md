@@ -6,11 +6,13 @@ A simple API for managing tasks.
 
 ## Endpoints
 
-- `GET /tasks` - List all tasks
-- `GET /tasks/:id` - Get a specific task
-- `POST /tasks` - Create a new task
-- `PUT /tasks/:id` - Update a task
-- `DELETE /tasks/:id` - Delete a task
+[Live site](https://task-api-ts.onrender.com/)
+
+- `GET /tasks` - List all tasks : https://task-api-ts.onrender.com/tasks
+- `GET /tasks/:id` - Get a specific task : https://task-api-ts.onrender.com/tasks/:id
+- `POST /tasks` - Create a new task : https://task-api-ts.onrender.com/tasks
+- `PUT /tasks/:id` - Update a task : https://task-api-ts.onrender.com/tasks/:id
+- `DELETE /tasks/:id` - Delete a task : https://task-api-ts.onrender.com/:id
 
 ## Usage
 
