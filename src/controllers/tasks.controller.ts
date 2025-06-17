@@ -44,20 +44,31 @@ export const getSpecificTask = async (req: Request, res: Response) => {
     } catch (e) {
         res.status(500).json({ message: "Something Went Wrong!" });
     }
-}
+};
 
 export const updateTask = async (req: Request, res: Response) => {
     try{
         const  { id } = req.params;
-
         const { title, description } = req.body;
-
         const updatedTask = await myClient.task.update({
             where: {id},
             data: {title, description}
         });
         res.status(200).json({ message: `Task '${id}' Updated Successfully!`, updated_task: updatedTask })
     } catch (e) {
-        res.status(500).json({ message: "SomethingWent Wrong!" })
+        res.status(500).json({ message: "SomethingWent Wrong!" });
     }
-}
+};
+
+export const deleteTask = async (req: Request, res: Response) => {
+    try {
+        const { id } = req.params;
+        const deletedTask = await myClient.task.update({
+            where: { id },
+            data: { isDeleted: true }
+        });
+        res.status(200).json({ message: `Task '${id}' Deleted Successfully!`, deleted_task: deletedTask });
+    } catch (e) {
+        res.status(500).json({ message: "Something Went Wrong!" });
+    }
+};
