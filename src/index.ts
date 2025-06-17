@@ -1,6 +1,6 @@
 import express, { Express, Request, Response } from "express";
 import path from "path";
-import { createNewTask, getAllTasks } from "./controllers/tasks.controller";
+import { createNewTask, getAllTasks, getSpecificTask } from "./controllers/tasks.controller";
 import { PrismaClient } from "@prisma/client";
 
 const myClient = new PrismaClient();
@@ -17,6 +17,9 @@ app.post("/tasks", createNewTask);
 
 // GET /tasks (retrieve all tasks)
 app.get("/tasks",getAllTasks);
+
+// GET /tasks/:id (retrieve a specific task based on a query parameter)
+app.get("/tasks/:id", getSpecificTask)
 
 // this middleware tells express that whenever a static asset is required, it can look inside /public for assets like CSS
 app.use(express.static(__dirname + "public"));

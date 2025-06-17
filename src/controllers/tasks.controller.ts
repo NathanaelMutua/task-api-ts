@@ -13,7 +13,6 @@ export const createNewTask = async (req: Request, res: Response) => {
       .status(201)
       .json({ message: "New Task Created Successfully!", new_task: newTask });
   } catch (e) {
-    console.log(e);
     res.status(500).json({ message: "Something Went Wrong!" });
   }
 };
@@ -30,7 +29,19 @@ export const getAllTasks = async (_req: Request, res: Response) => {
         all_tasks: allTasks,
       });
   } catch (e) {
-    console.log(e);
     res.status(500).json({ message: "Something Went Wrong!" });
   }
 };
+
+export const getSpecificTask = async (req: Request, res: Response) => {
+    try {
+        const { id } = req.params;
+
+        const specificTask = await myClient.task.findFirst({
+            where: {isDeleted: false, id},
+        });
+        res.status(200).json({ message: `Task '${id}' Retrieved Successfully!`, specificTask })
+    } catch (e) {
+        res.status(500).json({ message: "Something Went Wrong!" });
+    }
+}
