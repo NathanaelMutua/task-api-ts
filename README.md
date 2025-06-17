@@ -2,7 +2,7 @@
 
 A simple API for managing tasks.
 
-**Postman** workspace [link](https://nathanael-7604382.postman.co/workspace/Nathanael's-Workspace~5b4242d0-11c7-4277-809b-10ca424c98a5/collection/45838328-36f9e20f-ebba-4d9f-9a04-61e39f485e61?action=share&creator=45838328)
+**Postman** workspace: [link to postman requests](https://nathanael-7604382.postman.co/workspace/Nathanael's-Workspace~5b4242d0-11c7-4277-809b-10ca424c98a5/collection/45838328-36f9e20f-ebba-4d9f-9a04-61e39f485e61?action=share&creator=45838328)
 
 ## Endpoints
 
