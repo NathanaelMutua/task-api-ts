@@ -16,17 +16,75 @@ html {
 
 body {
   height: 100vh;
-  border: 2px solid red;
+}
+
+.title-section {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 200;
+  font-family: var(--title-font);
+  line-height: 2.5rem;
+  padding-top: 1rem;
+}
+
+.content-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem 2rem;
+  font-size: 1.4rem;
+}
+
+.description {
+  padding-bottom: 1rem;
+}
+
+.paragraph-content {
+  padding-bottom: 1rem;
+}
+
+.content-section h2 {
+  font-family: var(--title-font);
+  font-weight: 100;
 }
 
 .footer-section {
   position: fixed;
   bottom: 0;
   width: 100%;
-  padding: 1rem 4rem;
+  padding: 1rem 2rem;
   display: flex;
-  background-color: rgb(0, 0, 68);
-  color: rgb(255, 255, 255);
+  background-color: #000044;
+  color: #ffffff;
   justify-content: space-between;
-  border: 2px solid red;
+}
+
+.technologies-title,
+.name {
+  font-size: 1.8rem;
+}
+
+.technologies-list {
+  list-style: none;
+  font-size: 1.4rem;
+}
+
+.fa-brands {
+  font-size: 2rem;
+  padding: 0.5rem;
+}
+
+.socials {
+  display: flex;
+  flex-direction: column;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: right;
+}
+
+.social-icon-link {
+  text-decoration: none;
+  color: white;
 }
