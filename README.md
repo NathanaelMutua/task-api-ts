@@ -16,7 +16,6 @@ A simple API for managing tasks.
 
 Send HTTP requests to the endpoints above. All responses are in JSON format.
 
-
 ## Error Handling
 
 - New task input cannot be empty
