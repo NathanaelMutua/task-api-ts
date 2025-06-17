@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npx tsc",
     "start:prod": "node build/index.js",
-    "start:dev": "nodemon index.ts",
+    "start:dev": "nodemon src/index.ts",
     "format": "prettier --write ."
   },
   "repository": {
@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/NathanaelMutua/task-api-ts#readme",
   "dependencies": {
+    "@prisma/client": "^6.9.0",
     "express": "^5.1.0"
   },
   "devDependencies": {

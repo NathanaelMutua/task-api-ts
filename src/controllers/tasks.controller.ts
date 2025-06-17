@@ -1,0 +1,36 @@
+import { Request, Response } from "express";
+import { PrismaClient } from "@prisma/client";
+
+const myClient = new PrismaClient();
+
+export const createNewTask = async (req: Request, res: Response) => {
+  try {
+    const { title, description } = req.body;
+    const newTask = await myClient.task.create({
+      data: { title, description },
+    });
+    res
+      .status(201)
+      .json({ message: "New Task Created Successfully!", new_task: newTask });
+  } catch (e) {
+    console.log(e);
+    res.status(500).json({ message: "Something Went Wrong!" });
+  }
+};
+
+export const getAllTasks = async (_req: Request, res: Response) => {
+  try {
+    const allTasks = await myClient.task.findMany({
+      where: { isDeleted: false },
+    });
+    res
+      .status(200)
+      .json({
+        message: "All Tasks Retrieved Successfully!",
+        all_tasks: allTasks,
+      });
+  } catch (e) {
+    console.log(e);
+    res.status(500).json({ message: "Something Went Wrong!" });
+  }
+};
