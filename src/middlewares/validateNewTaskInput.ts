@@ -8,11 +8,13 @@ export const validateNewTaskInput = async (
   const { title, description } = req.body;
 
   if (!title) {
-    return res.status(400).json({ message: "The Title Is Required!" });
+    res.status(400).json({ message: "The Title Is Required!" });
+    return
   }
 
   if (!description) {
-    return res.status(400).json({ message: "The Description Is Required!" });
+    res.status(400).json({ message: "The Description Is Required!" });
+    return
   }
 
   next();
